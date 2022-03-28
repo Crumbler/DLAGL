@@ -1,0 +1,10 @@
+#version 330 core
+
+in float FHue;
+
+out vec4 outColor;
+
+void main()
+{
+    outColor = vec4(1.0, 1.0, 0.0, step(distance(vec2(0.5), gl_PointCoord), 0.5));
+}

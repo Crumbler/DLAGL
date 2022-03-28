@@ -1,0 +1,30 @@
+#version 330 core
+
+layout(location = 0) in vec2 position;
+layout(location = 1) in vec2 Vuv;
+
+out vec2 Fuv;
+out vec3 FColor;
+
+uniform mat4 projMat;
+
+uniform float useHue, hueS, hueV;
+
+float f(in float x)
+{
+    return clamp(abs(x - 3.0) - 1.0, hueV * (1.0 - hueS), hueV);
+}
+
+vec3 h(in float x)
+{
+    return vec3(f(mod(x, 6.0)),
+                f(mod(x + 4.0, 6.0)),
+                f(mod(x + 2.0, 6.0)));
+}
+
+void main()
+{
+    Fuv = Vuv;
+    FColor = h(0.0) * useHue + vec3(1.0 - useHue);
+    gl_Position = projMat * vec4(position.x, position.y, 0.0, 1.0);
+}

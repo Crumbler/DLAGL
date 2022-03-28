@@ -1,0 +1,115 @@
+#version 330 core
+
+in vec2 Fuv;
+in vec3 FColor;
+
+out vec4 outColor;
+
+uniform vec4 Lines[10];
+uniform vec4 Circles[10];
+uniform float Boxes[50];
+uniform mat3x2 Beziers[10];
+
+uniform int lineCount, circleCount,
+            boxCount, bezierCount;
+
+float dot2(in vec2 v)
+{
+    return dot(v, v);
+}
+
+float sdBezier(in vec2 pos, in vec2 A, in vec2 B, in vec2 C)
+{
+    vec2 a = B - A;
+    vec2 b = A - 2.0 * B + C;
+    vec2 c = a * 2.0;
+    vec2 d = A - pos;
+    float kk = 1.0 / max(dot(b, b), 0.01);
+    float kx = kk * dot(a, b);
+    float ky = kk * (2.0 * dot(a, a) + dot(d, b)) / 3.0;
+    float kz = kk * dot(d, a);
+    float res = 0.0;
+    float p = ky - kx * kx;
+    float p3 = p * p * p;
+    float q = kx * (2.0 * kx * kx - 3.0 * ky) + kz;
+    float h = q * q + 4.0 * p3;
+    if(h >= 0.0)
+    {
+        h = sqrt(h);
+        vec2 x = (vec2(h, -h) - q) / 2.0;
+        vec2 uv = sign(x) * pow(abs(x), vec2(1.0 / 3.0));
+        float t = clamp(uv.x + uv.y - kx, 0.0, 1.0);
+        res = dot2(d + (c + b * t) * t);
+    }
+    else
+    {
+        float z = sqrt(-p);
+        float v = acos(q / (p * z * 2.0)) / 3.0;
+        float m = cos(v);
+        float n = sin(v) * 1.732050808;
+        vec3  t = clamp(vec3(m + m, -n - m, n - m) * z - kx, 0.0, 1.0);
+        res = min(dot2(d + (c + b * t.x) * t.x),
+                  dot2(d + (c + b * t.y) * t.y));
+    }
+    return sqrt(res) - 0.2;
+}
+
+float sdBox(in vec2 p, in vec2 a, in vec2 b, float th)
+{
+    vec2 baseY = normalize(b - a),
+         baseX = vec2(baseY.y, -baseY.x);
+
+    float len = length(b - a);
+
+    vec2 proj = abs(vec2(dot(p - a, baseX),
+                         dot(p - a, baseY) - len * 0.5));
+
+    vec2 inBoxV = step(proj, vec2(th, len) * 0.5);
+
+    float inBox = inBoxV.x * inBoxV.y,
+          distOuter = distance(vec2(th, len) * 0.5, proj),
+          distInner = -min(proj.x, proj.y);
+
+    return distInner * inBox + distOuter * (1.0 - inBox);
+}
+
+float sdSegment(in vec2 p, in vec2 a, in vec2 b)
+{
+    vec2 ba = normalize(b - a);
+    float h = clamp(dot(p - a, ba), 0.0, length(b - a));
+    return distance(p, a + ba * h);
+}
+
+void main()
+{
+    float d = 1.0;
+
+    for (int i = 0; i < lineCount; ++i)
+        d = min(d, sdSegment(Fuv, Lines[i].xy, Lines[i].zw) - 0.2);
+
+    for (int i = 0; i < circleCount; ++i)
+    {
+        float rev = Circles[i].w,
+              r = Circles[i].z;
+
+        vec2 c = Circles[i].xy;
+
+        d = min(d, (distance(Fuv, c) - r) * (1.0 - 2.0 * rev));
+    }
+
+    for (int i = 0; i < boxCount; ++i)
+    {
+        vec2 a = vec2(Boxes[i * 5], Boxes[i * 5 + 1]),
+             b = vec2(Boxes[i * 5 + 2], Boxes[i * 5 + 3]);
+
+        float th = Boxes[i * 5 + 4];
+
+        d = min(d, sdBox(Fuv, a, b, th));
+    }
+
+    for (int i = 0; i < bezierCount; ++i)
+        d = min(d, sdBezier(Fuv, Beziers[i][0], Beziers[i][1], Beziers[i][2]));
+
+    outColor = vec4(FColor,
+                    step(d, 0.0));
+}

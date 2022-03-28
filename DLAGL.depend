@@ -1,0 +1,304 @@
+# depslib dependency file v1.0
+1607810187 source:d:\programs\codeblocks\projects\dlagl\main.cpp
+	"imgui.h"
+	"imgui_impl_glfw.h"
+	"imgui_impl_opengl3.h"
+	<glad/glad.h>
+	<GLFW/glfw3.h>
+	<GLFW/glfw3native.h>
+	<windows.h>
+	<iostream>
+	<vector>
+	<string>
+	"stb_image_write.h"
+	<glm/glm.hpp>
+	<glm/gtc/matrix_transform.hpp>
+	"DLAModel.hpp"
+	"DLABase.hpp"
+	"PointShader.hpp"
+	"DLABaseShader.hpp"
+	"Renderer.hpp"
+	"Loader.hpp"
+	"PointModel.hpp"
+	"Utils.hpp"
+
+1605364894 source:d:\programs\codeblocks\projects\dlagl\glad.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<glad/glad.h>
+	<windows.h>
+	<winapifamily.h>
+	<dlfcn.h>
+
+1605439994 source:d:\programs\codeblocks\projects\dlagl\imgui.cpp
+	"imgui.h"
+	"imgui_internal.h"
+	<ctype.h>
+	<stdio.h>
+	<stddef.h>
+	<stdint.h>
+	<Windows.h>
+	<windows.h>
+	<TargetConditionals.h>
+	"stb_sprintf.h"
+	<Carbon/Carbon.h>
+	<imm.h>
+	"imgui_user.inl"
+
+1606131054 d:\programs\codeblocks\projects\dlagl\imgui.h
+	"imconfig.h"
+	<float.h>
+	<stdarg.h>
+	<stddef.h>
+	<string.h>
+	<assert.h>
+	<stdint.h>
+	"imgui_user.h"
+
+1602165719 d:\programs\codeblocks\projects\dlagl\imconfig.h
+
+1602165719 d:\programs\codeblocks\projects\dlagl\imgui_internal.h
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<limits.h>
+	"imstb_textedit.h"
+
+1602165719 d:\programs\codeblocks\projects\dlagl\imstb_textedit.h
+	<string.h>
+
+1606043251 source:d:\programs\codeblocks\projects\dlagl\imgui_demo.cpp
+	"imgui.h"
+	<ctype.h>
+	<limits.h>
+	<math.h>
+	<stdio.h>
+	<stdlib.h>
+	<stddef.h>
+	<stdint.h>
+
+1602165719 source:d:\programs\codeblocks\projects\dlagl\imgui_draw.cpp
+	"imgui.h"
+	"imgui_internal.h"
+	<stdio.h>
+	<alloca.h>
+	<malloc.h>
+	<stdlib.h>
+	"imstb_rectpack.h"
+	"imstb_truetype.h"
+
+1602165719 d:\programs\codeblocks\projects\dlagl\imstb_rectpack.h
+	<stdlib.h>
+	<assert.h>
+
+1602165719 d:\programs\codeblocks\projects\dlagl\imstb_truetype.h
+	"stb_truetype.h"
+	<stdio.h>
+	"stb_truetype.h"
+	<math.h>
+	<math.h>
+	<math.h>
+	<math.h>
+	<math.h>
+	<stdlib.h>
+	<assert.h>
+	<string.h>
+	<string.h>
+
+1605299419 source:d:\programs\codeblocks\projects\dlagl\imgui_impl_glfw.cpp
+	"imgui.h"
+	"imgui_impl_glfw.h"
+	<GLFW/glfw3.h>
+	<GLFW/glfw3native.h>
+
+1605299419 d:\programs\codeblocks\projects\dlagl\imgui_impl_glfw.h
+	"imgui.h"
+
+1605299419 source:d:\programs\codeblocks\projects\dlagl\imgui_impl_opengl3.cpp
+	"imgui.h"
+	"imgui_impl_opengl3.h"
+	<stdio.h>
+	<stddef.h>
+	<stdint.h>
+	<GLES2/gl2.h>
+	<OpenGLES/ES3/gl.h>
+	<GLES3/gl3.h>
+	<GL/gl3w.h>
+	<GL/glew.h>
+	<glad/glad.h>
+	<glad/gl.h>
+	<glbinding/Binding.h>
+	<glbinding/gl/gl.h>
+	<glbinding/glbinding.h>
+	<glbinding/gl/gl.h>
+
+1605299419 d:\programs\codeblocks\projects\dlagl\imgui_impl_opengl3.h
+	"imgui.h"
+	"TargetConditionals.h"
+
+1602165719 source:d:\programs\codeblocks\projects\dlagl\imgui_widgets.cpp
+	"imgui.h"
+	"imgui_internal.h"
+	<ctype.h>
+	<stddef.h>
+	<stdint.h>
+	"imstb_textedit.h"
+
+1606249935 source:d:\programs\codeblocks\projects\dlagl\shaderprogram.cpp
+	"ShaderProgram.hpp"
+	<string>
+	<fstream>
+	<sstream>
+	<vector>
+	<glm/gtc/type_ptr.hpp>
+
+1606249908 d:\programs\codeblocks\projects\dlagl\shaderprogram.hpp
+	<glad/glad.h>
+	<vector>
+	"ShaderInfo.hpp"
+	<initializer_list>
+	<glm/glm.hpp>
+
+1605470343 d:\programs\codeblocks\projects\dlagl\shaderinfo.hpp
+
+1605519183 source:d:\programs\codeblocks\projects\dlagl\staticshader.cpp
+	"StaticShader.hpp"
+
+1605905492 d:\programs\codeblocks\projects\dlagl\staticshader.hpp
+	"ShaderProgram.hpp"
+
+1605818719 source:d:\programs\codeblocks\projects\dlagl\rawmodel.cpp
+	"RawModel.hpp"
+	<iostream>
+
+1605904876 d:\programs\codeblocks\projects\dlagl\rawmodel.hpp
+	<glad/glad.h>
+	<vector>
+
+1607946903 source:d:\programs\codeblocks\projects\dlagl\renderer.cpp
+	"Renderer.hpp"
+	<glad/glad.h>
+	<glm/glm.hpp>
+	<glm/gtc/matrix_transform.hpp>
+
+1606253550 d:\programs\codeblocks\projects\dlagl\renderer.hpp
+	"PointShader.hpp"
+	"DLABaseShader.hpp"
+	"RawModel.hpp"
+	"PointModel.hpp"
+	<glm/glm.hpp>
+
+1606253607 source:d:\programs\codeblocks\projects\dlagl\loader.cpp
+	"Loader.hpp"
+	<glad/glad.h>
+	<iostream>
+
+1606253759 d:\programs\codeblocks\projects\dlagl\loader.hpp
+	"RawModel.hpp"
+	"PointModel.hpp"
+	<glm/glm.hpp>
+	<vector>
+
+1605043225 source:d:\programs\codeblocks\projects\dlagl\dla model\dlamodel.cpp
+	"DLAModel.hpp"
+	"utils.hpp"
+	<iostream>
+
+1605820504 d:\programs\codeblocks\projects\dlagl\dla model\dlamodel.hpp
+	<vector>
+	"pointcloud.hpp"
+
+1605042314 d:\programs\codeblocks\projects\dlagl\dla model\pointcloud.hpp
+	"Vector.hpp"
+	<nanoflann.hpp>
+
+1605043061 d:\programs\codeblocks\projects\dlagl\dla model\vector.hpp
+	<math.h>
+
+1604681193 d:\programs\codeblocks\projects\dlagl\dla model\utils.hpp
+	"Vector.hpp"
+
+1604681214 source:d:\programs\codeblocks\projects\dlagl\dla model\utils.cpp
+	"utils.hpp"
+	<chrono>
+	<random>
+
+1605043061 source:d:\programs\codeblocks\projects\dlagl\dla model\vector.cpp
+	"Vector.hpp"
+
+1607858568 source:d:\programs\codeblocks\projects\dlagl\dlamodel.cpp
+	"DLAModel.hpp"
+	"utils.hpp"
+	<glm/gtx/norm.hpp>
+
+1607858367 d:\programs\codeblocks\projects\dlagl\dlamodel.hpp
+	<vector>
+	<string>
+	"pointcloud.hpp"
+	"DLABase.hpp"
+
+1607848750 d:\programs\codeblocks\projects\dlagl\pointcloud.hpp
+	<glm/glm.hpp>
+	<nanoflann.hpp>
+
+1606422467 d:\programs\codeblocks\projects\dlagl\vector.hpp
+
+1607858568 d:\programs\codeblocks\projects\dlagl\utils.hpp
+	"glm/glm.hpp"
+	"DLABase.hpp"
+
+1607864269 source:d:\programs\codeblocks\projects\dlagl\utils.cpp
+	"utils.hpp"
+	<glm/gtx/norm.hpp>
+	<chrono>
+	<random>
+
+1605820629 source:d:\programs\codeblocks\projects\dlagl\pointcloud.cpp
+	"pointcloud.hpp"
+
+1606422473 source:d:\programs\codeblocks\projects\dlagl\vector.cpp
+
+1607848765 source:d:\programs\codeblocks\projects\dlagl\pointmodel.cpp
+	"PointModel.hpp"
+
+1605984157 d:\programs\codeblocks\projects\dlagl\pointmodel.hpp
+	"RawModel.hpp"
+	"DLAModel.hpp"
+
+1607803142 source:d:\programs\codeblocks\projects\dlagl\pointshader.cpp
+	"PointShader.hpp"
+
+1607803122 d:\programs\codeblocks\projects\dlagl\pointshader.hpp
+	"ShaderProgram.hpp"
+
+1607807815 d:\programs\codeblocks\projects\dlagl\dlabase.hpp
+	<vector>
+	<glm/glm.hpp>
+
+1607806027 source:d:\programs\codeblocks\projects\dlagl\dlabase.cpp
+	"DLABase.hpp"
+
+1607807499 source:d:\programs\codeblocks\projects\dlagl\dlabaseshader.cpp
+	"DLABaseShader.hpp"
+
+1607807371 d:\programs\codeblocks\projects\dlagl\dlabaseshader.hpp
+	"DLABase.hpp"
+	"ShaderProgram.hpp"
+
+1606251316 source:d:\programs\codeblocks\projects\dlagl\dlabasemodel.cpp
+	"DLABaseModel.hpp"
+	"Vector.hpp"
+
+1606253394 d:\programs\codeblocks\projects\dlagl\dlabasemodel.hpp
+	"RawModel.hpp"
+
+1607787052 d:\programs\codeblocks\projects\dlagl\stb_image_write.h
+	<stdlib.h>
+	<stdio.h>
+	<stdarg.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	<assert.h>
+
